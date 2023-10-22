@@ -1,25 +1,20 @@
-
 import "../styles/App.css";
-import Header from "./Header/Header";
-import Navbar from "./Navbar/Navbar";
-import {Routes, Route} from "react-router-dom"
-import Stays from "./Navbar/Stays";
-import Flights from "./Navbar/Flights";
+import {BrowserRouter, Routes, Route} from "react-router-dom"
+import Home from "../pages/home/Home"
+import List from "../pages/list/List";
+import Hotel from "../pages/hotel/Hotel";
+
 
 function App() {
-
-  return <div className="App">
- <Header/>
-
-
-<Routes>
-<Route path="/" element={<Navbar/>}>
-
-  <Route path="/stays" element={<Stays/>} />
-  <Route path="/flights" element={<Flights/>}/>
-</Route>
-</Routes>
-  </div>
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/hotels" element={<List/>}/>
+        <Route path="/hotels/:id" element={<Hotel/>}/>
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
