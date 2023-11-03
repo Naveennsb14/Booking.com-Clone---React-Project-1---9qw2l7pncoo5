@@ -1,13 +1,15 @@
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import "./login.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { AuthContext } from "../../../components/App";
 
 const Login = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
 
   const navigate = useNavigate();
+  const { setIsLoggedin } = useContext(AuthContext);
 
   const loginUser = async (user) => {
     const config = {
@@ -26,6 +28,7 @@ const Login = () => {
       if (token) {
         sessionStorage.setItem("userToken", token);
         sessionStorage.setItem("userName", JSON.stringify(res.data.data.name));
+        setIsLoggedin(true)
 
         navigate("/");
       }

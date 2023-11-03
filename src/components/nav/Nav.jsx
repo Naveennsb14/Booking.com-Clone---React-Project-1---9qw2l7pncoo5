@@ -1,26 +1,58 @@
-import { useNavigate } from "react-router-dom"
-import "../nav/Nav.css"
-
-
+import { useNavigate } from "react-router-dom";
+import "../nav/Nav.css";
+import { useContext } from "react";
+import { AuthContext } from "../App";
 
 const Nav = () => {
-  const navigate=useNavigate();
+  const navigate = useNavigate();
+  const { isloggedin, setIsLoggedin } = useContext(AuthContext);
+  const userName = JSON.parse(sessionStorage.getItem("userName"));
 
-  const navigateHandler = (path)=>{
+  const navigateHandler = (path) => {
     navigate(path);
+  };
+
+  const logOut = () => {
+    sessionStorage.removeItem("userToken")
+    sessionStorage.removeItem("userName")
+    setIsLoggedin(false)
+    navigate("/signin")
+
   };
 
   return (
     <div className="navbar">
-     <div className="navContainer">
-      <h2 className="logo">Booking.com</h2>
-      <div className="navItems">
-        <button className="navButton" onClick={() => navigateHandler("/signup")}>Register</button>
-        <button className="navButton" onClick={() => navigateHandler("/signin")}>Sign in</button>
+      <div className="navContainer">
+        <h2 className="logo">Booking.com</h2>
+        <div className="navItems">
+          {isloggedin ? (
+            <>
+              {" "}
+              <button className="navButton" onClick={logOut}>
+                Log out
+              </button>
+            </>
+          ) : (
+            <>
+              <button
+                className="navButton"
+                onClick={() => navigateHandler("/signup")}
+              >
+                Register
+              </button>
+              <button
+                className="navButton"
+                onClick={() => navigateHandler("/signin")}
+              >
+                Sign in
+              </button>
+            </>
+          )}
+          {isloggedin && <span>{userName}</span>}
+        </div>
       </div>
-     </div>
     </div>
-  )
-}
+  );
+};
 
-export default Nav
+export default Nav;

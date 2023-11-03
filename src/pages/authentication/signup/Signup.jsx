@@ -1,14 +1,16 @@
-import { useRef } from "react";
+import { useContext, useRef } from "react";
 import "./signup.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../../components/App";
 
 const Signup = () => {
   const nameRef = useRef();
   const emailRef = useRef();
   const passwordRef = useRef();
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const { setIsLoggedin } = useContext(AuthContext);
 
   const createUser = async (user) => {
     const config = {
@@ -23,12 +25,13 @@ const Signup = () => {
         config
       );
       console.log(res);
-      const token = res.data.token
-      if(token){
-        sessionStorage.setItem("userToken", token)
-        sessionStorage.setItem("user", JSON.stringify(res.data.data.name))
-        navigate("/")
+      const token = res.data.token;
+      if (token) {
+        sessionStorage.setItem("userToken", token);
+        sessionStorage.setItem("userName", JSON.stringify(res.data.data.user.name));
+        setIsLoggedin(true);
 
+        navigate("/");
       }
     } catch (error) {
       console.log("error", error);
