@@ -27,6 +27,7 @@
     font-size: small;
     margin-bottom: 40px;
 }
+
 .headerListItem{
     display: flex;
     align-items: center;
@@ -35,6 +36,14 @@
 
 .headerListIcon{
     font-size: large
+
+}
+
+.span{
+    display: flex;
+    gap: 8px;
+    color: white;
+    text-decoration: none;
 }
 
 .headerTitle{
@@ -47,11 +56,13 @@
     font-family: sans-serif
 }
 
- .headerListItem.active{
+  .headerListItem .active{
     border: 1px solid white;
-    padding: 10px;
+    padding: 6px;
     border-radius: 20px;
-}
+} 
+
+
 
 .headerDesc{
     margin: 20px 0px;
@@ -94,6 +105,11 @@
     padding: 10px 24px;
     left: 100px;
     border: none;
+    cursor: pointer;
+    
+}
+.searchBtn:hover{
+    background-color: #003B95;
     
 }
 

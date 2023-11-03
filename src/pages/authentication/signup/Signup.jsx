@@ -28,7 +28,10 @@ const Signup = () => {
       const token = res.data.token;
       if (token) {
         sessionStorage.setItem("userToken", token);
-        sessionStorage.setItem("userName", JSON.stringify(res.data.data.user.name));
+        sessionStorage.setItem(
+          "userName",
+          JSON.stringify(res.data.data.user.name)
+        );
         setIsLoggedin(true);
 
         navigate("/");
@@ -47,6 +50,9 @@ const Signup = () => {
     };
     createUser(userDetails);
   };
+  const handleNavigate=(path)=>{
+    navigate(path)
+  }
   return (
     <>
       <div className="booking">
@@ -96,6 +102,7 @@ const Signup = () => {
               className="login-btn"
               type="submit"
               value="continue to login"
+              onClick={()=>handleNavigate("/signin")}
             />
           </div>
         </form>

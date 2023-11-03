@@ -45,6 +45,11 @@ const Login = () => {
     };
     loginUser(userDetails);
   };
+
+  const handleNavigate=(path)=>{
+    navigate(path);
+
+  }
   return (
     <>
       <div className="booking">
@@ -78,12 +83,13 @@ const Login = () => {
             <br />
             <input className="login-btn" type="submit" value="Login" />
             <br />
-            <span className="span-text">Not a user? create account</span>
+            <span className="span-text" >Not a user? create account</span>
             <br />
             <input
               className="signup-btn"
               type="submit"
               value="create account"
+              onClick={()=>handleNavigate("/signup")}
             />
           </div>
         </form>

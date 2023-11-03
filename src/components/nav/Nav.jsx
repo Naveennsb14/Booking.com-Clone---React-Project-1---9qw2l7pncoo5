@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "../nav/Nav.css";
 import { useContext } from "react";
 import { AuthContext } from "../App";
@@ -23,7 +23,7 @@ const Nav = () => {
   return (
     <div className="navbar">
       <div className="navContainer">
-        <h2 className="logo">Booking.com</h2>
+        <NavLink to={"/"} className="logo"><h2 >Booking.com</h2></NavLink>
         <div className="navItems">
           {isloggedin ? (
             <>
@@ -48,7 +48,7 @@ const Nav = () => {
               </button>
             </>
           )}
-          {isloggedin && <span>{userName}</span>}
+          {isloggedin && <span className="userdetails">{userName}</span>}
         </div>
       </div>
     </div>
