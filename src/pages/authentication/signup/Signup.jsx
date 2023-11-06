@@ -1,7 +1,7 @@
 import { useContext, useRef } from "react";
 import "./signup.css";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../components/App";
 
 const Signup = () => {
@@ -57,7 +57,7 @@ const Signup = () => {
     <>
       <div className="booking">
         <div className="booking-container">
-          <h3>Booking.com</h3>
+        <NavLink to="/" className="logo"><h2>Booking.com</h2></NavLink>
         </div>
       </div>
       <h2 className="signup-text">Signup or continue to login</h2>

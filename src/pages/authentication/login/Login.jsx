@@ -1,6 +1,6 @@
 import { useContext, useRef, useState } from "react";
 import "./login.css";
-import { useNavigate } from "react-router-dom";
+import { NavLink, Navigate, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../../../components/App";
 
@@ -52,9 +52,9 @@ const Login = () => {
   }
   return (
     <>
-      <div className="booking">
+      <div className="booking" >
         <div className="booking-container">
-          <h3>Booking.com</h3>
+          <NavLink to="/" className="logo"><h2>Booking.com</h2></NavLink>
         </div>
       </div>
       <h2 className="signin-text">Sign in or create an account</h2>
