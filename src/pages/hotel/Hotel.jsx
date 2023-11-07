@@ -2,10 +2,11 @@ import "./hotel.css";
 import Nav from "../../components/nav/Nav";
 import Head from "../../components/header/Head";
 import { useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { format } from "date-fns";
 import { DateRange } from "react-date-range";
 import Searchitems from "../../components/searchitems/Searchitems";
+import axios from "axios";
 
 const Hotel = () => {
   const location = useLocation();
@@ -15,6 +16,27 @@ const Hotel = () => {
   const [option, setOption] = useState(location.state.option);
   const [openoption, setOpenOption] = useState(false);
 
+  const getHotelList = async () => {
+    const config = {
+      headers: {
+        projectId: "9qw2l7pncoo5",
+      },
+    };
+    try {
+      const response = await axios.get(
+        "https://academics.newtonschool.co/api/v1/bookingportals/hotel",
+        config
+      );
+      console.log("response", response);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getHotelList();
+  }, []);
+
   const handleOption = (name, operation) => {
     setOption((prev) => {
       return {
@@ -23,6 +45,7 @@ const Hotel = () => {
       };
     });
   };
+
   return (
     <div>
       <Nav />
@@ -129,14 +152,6 @@ const Hotel = () => {
             </div>
           </div>
           <div className="listResult">
-            <Searchitems />
-            <Searchitems />
-            <Searchitems />
-            <Searchitems />
-
-            <Searchitems />
-            <Searchitems />
-            <Searchitems />
             <Searchitems />
           </div>
         </div>

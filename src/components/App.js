@@ -7,21 +7,11 @@ import Signup from "../pages/authentication/signup/Signup";
 import { createContext, useState } from "react";
 import Flights from "../pages/flights/Flights";
 import Hotelpage from "../pages/hotelpage/Hotelpage";
-
-export const AuthContext = createContext();
+import { Authprovider } from "../pages/provider/Authprovider";
 
 function App() {
-  let isUserloggedin;
-  let token = sessionStorage.getItem("userToken");
-  if (token) {
-    isUserloggedin=true
-  }
-  else{
-    isUserloggedin=false
-  }
-  const [isloggedin, setIsLoggedin] = useState(isUserloggedin);
   return (
-    <AuthContext.Provider value={{ isloggedin, setIsLoggedin }}>
+    <Authprovider>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -32,7 +22,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
         </Routes>
       </BrowserRouter>
-    </AuthContext.Provider>
+    </Authprovider>
   );
 }
 

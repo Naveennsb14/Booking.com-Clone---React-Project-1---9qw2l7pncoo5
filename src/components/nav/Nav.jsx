@@ -1,11 +1,10 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import "../nav/Nav.css";
-import { useContext } from "react";
-import { AuthContext } from "../App";
+import { useAuth } from "../../pages/provider/Authprovider";
 
 const Nav = () => {
   const navigate = useNavigate();
-  const { isloggedin, setIsLoggedin } = useContext(AuthContext);
+  const { isloggedin, setIsLoggedin } = useAuth()
   const userName = JSON.parse(sessionStorage.getItem("userName"));
 
   const navigateHandler = (path) => {

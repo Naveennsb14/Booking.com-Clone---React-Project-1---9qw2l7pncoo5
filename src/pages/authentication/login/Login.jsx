@@ -1,15 +1,15 @@
-import { useContext, useRef, useState } from "react";
+import { useRef } from "react";
 import "./login.css";
-import { NavLink, Navigate, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { AuthContext } from "../../../components/App";
+import { useAuth } from "../../provider/Authprovider";
 
 const Login = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
 
   const navigate = useNavigate();
-  const { setIsLoggedin } = useContext(AuthContext);
+  const { setIsLoggedin } = useAuth();
 
   const loginUser = async (user) => {
     const config = {
@@ -28,7 +28,7 @@ const Login = () => {
       if (token) {
         sessionStorage.setItem("userToken", token);
         sessionStorage.setItem("userName", JSON.stringify(res.data.data.name));
-        setIsLoggedin(true)
+        setIsLoggedin(true);
 
         navigate("/");
       }
@@ -46,15 +46,16 @@ const Login = () => {
     loginUser(userDetails);
   };
 
-  const handleNavigate=(path)=>{
+  const handleNavigate = (path) => {
     navigate(path);
-
-  }
+  };
   return (
     <>
-      <div className="booking" >
+      <div className="booking">
         <div className="booking-container">
-          <NavLink to="/" className="logo"><h2>Booking.com</h2></NavLink>
+          <NavLink to="/" className="logo">
+            <h2>Booking.com</h2>
+          </NavLink>
         </div>
       </div>
       <h2 className="signin-text">Sign in or create an account</h2>
@@ -83,13 +84,13 @@ const Login = () => {
             <br />
             <input className="login-btn" type="submit" value="Login" />
             <br />
-            <span className="span-text" >Not a user? create account</span>
+            <span className="span-text">Not a user? create account</span>
             <br />
             <input
               className="signup-btn"
               type="submit"
               value="create account"
-              onClick={()=>handleNavigate("/signup")}
+              onClick={() => handleNavigate("/signup")}
             />
           </div>
         </form>

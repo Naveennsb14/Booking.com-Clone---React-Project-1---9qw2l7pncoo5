@@ -1,8 +1,8 @@
-import { useContext, useRef } from "react";
+import { useRef } from "react";
 import "./signup.css";
 import axios from "axios";
 import { NavLink, useNavigate } from "react-router-dom";
-import { AuthContext } from "../../../components/App";
+import { useAuth } from "../../provider/Authprovider";
 
 const Signup = () => {
   const nameRef = useRef();
@@ -10,7 +10,7 @@ const Signup = () => {
   const passwordRef = useRef();
 
   const navigate = useNavigate();
-  const { setIsLoggedin } = useContext(AuthContext);
+  const { setIsLoggedin } = useAuth();
 
   const createUser = async (user) => {
     const config = {
@@ -50,14 +50,16 @@ const Signup = () => {
     };
     createUser(userDetails);
   };
-  const handleNavigate=(path)=>{
-    navigate(path)
-  }
+  const handleNavigate = (path) => {
+    navigate(path);
+  };
   return (
     <>
       <div className="booking">
         <div className="booking-container">
-        <NavLink to="/" className="logo"><h2>Booking.com</h2></NavLink>
+          <NavLink to="/" className="logo">
+            <h2>Booking.com</h2>
+          </NavLink>
         </div>
       </div>
       <h2 className="signup-text">Signup or continue to login</h2>
@@ -102,7 +104,7 @@ const Signup = () => {
               className="login-btn"
               type="submit"
               value="continue to login"
-              onClick={()=>handleNavigate("/signin")}
+              onClick={() => handleNavigate("/signin")}
             />
           </div>
         </form>
