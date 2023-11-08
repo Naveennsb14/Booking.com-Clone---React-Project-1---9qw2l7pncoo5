@@ -2,15 +2,14 @@ import { useNavigate, useParams } from "react-router-dom";
 import "./hotelcard.css";
 
 const HotelCard = ({ details }) => {
-    const navigate = useNavigate()
-  const { images, name, location, rating, rooms, amenities,_id} = details;
-  console.log('id', _id);
+  const navigate = useNavigate();
+  const { images, name, location, rating, rooms, amenities, _id } = details;
+  console.log("id", _id);
+  localStorage.setItem('userid', _id);
 
-
-  const openModal = ()=>{
-    navigate(`/hotels/:${_id}`)
-
-  }
+  const openModal = () => {
+    navigate(`/hotels/${_id}`);
+  };
 
   return (
     <div>
@@ -41,7 +40,9 @@ const HotelCard = ({ details }) => {
             <span className="price-details">
               {`₹ ${rooms[0].costPerNight}`}{" "}
             </span>
-            <button className="availability-btn" onClick={openModal}>See availability</button>
+            <button className="availability-btn" onClick={openModal}>
+              See availability
+            </button>
           </div>
         </div>
       </div>

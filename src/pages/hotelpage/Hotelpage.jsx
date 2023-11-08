@@ -3,7 +3,6 @@ import "./hotelpage.css";
 import { CiLocationOn } from "react-icons/ci";
 import { useEffect } from "react";
 import axios from "axios";
-import { config } from "@fortawesome/fontawesome-svg-core";
 
 const Hotelpage = () => {
   const photos = [
@@ -29,27 +28,28 @@ const Hotelpage = () => {
 
   const { id } = useParams();
   console.log("id", id);
+  const userid = localStorage.getItem('userid')
 
   const getHotelData = async () => {
     const config = {
-        headers: {
-          projectId: "9qw2l7pncoo5",
-        },
-      };
+      headers: {
+        projectId: "9qw2l7pncoo5",
+      },
+    };
     try {
       const response = await axios.get(
-        `https://academics.newtonschool.co/api/v1/bookingportals/hotel/${id}`,
+        `https://academics.newtonschool.co/api/v1/bookingportals/hotel/${userid}`,
         config
       );
-      console.log('response', response);
+      console.log("response", response);
     } catch (error) {
-        console.log('error', error);
+      console.log("error", error);
     }
   };
 
   useEffect(() => {
     console.log("called useeffect");
-    getHotelData()
+    getHotelData();
   }, [id]);
   return (
     <>
