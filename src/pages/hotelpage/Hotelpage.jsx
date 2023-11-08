@@ -28,7 +28,6 @@ const Hotelpage = () => {
 
   const { id } = useParams();
   console.log("id", id);
-  const userid = localStorage.getItem('userid')
 
   const getHotelData = async () => {
     const config = {
@@ -38,7 +37,7 @@ const Hotelpage = () => {
     };
     try {
       const response = await axios.get(
-        `https://academics.newtonschool.co/api/v1/bookingportals/hotel/${userid}`,
+        `https://academics.newtonschool.co/api/v1/bookingportals/hotel/${id}`,
         config
       );
       console.log("response", response);
