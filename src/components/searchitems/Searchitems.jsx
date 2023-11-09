@@ -6,6 +6,7 @@ import HotelCard from "../hotelcard/HotelCard";
 const Searchitems = () => {
   const token = sessionStorage.getItem("userToken");
   const [hotelData, setHotelData] = useState([]);
+  const hoteldestination = sessionStorage.getItem("destination");
   const getHotelList = async () => {
     const config = {
       headers: {
@@ -15,7 +16,7 @@ const Searchitems = () => {
     };
     try {
       const response = await axios.get(
-        "https://academics.newtonschool.co/api/v1/bookingportals/hotel",
+        `https://academics.newtonschool.co/api/v1/bookingportals/hotel?search={"location":"${hoteldestination}"}`,
         config
       );
       setHotelData(response.data.data.hotels);

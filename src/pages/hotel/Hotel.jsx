@@ -15,6 +15,7 @@ const Hotel = () => {
   const [opendate, setOpenDate] = useState(false);
   const [option, setOption] = useState(location.state.option);
   const [openoption, setOpenOption] = useState(false);
+  sessionStorage.setItem('destination', destination)
 
   const getHotelList = async () => {
     const config = {
@@ -24,7 +25,7 @@ const Hotel = () => {
     };
     try {
       const response = await axios.get(
-        "https://academics.newtonschool.co/api/v1/bookingportals/hotel",
+        `https://academics.newtonschool.co/api/v1/bookingportals/hotel?search={"location":"${destination}"}`,
         config
       );
       console.log("response", response);
@@ -45,6 +46,7 @@ const Hotel = () => {
       };
     });
   };
+  console.log(destination);
 
   return (
     <div>
