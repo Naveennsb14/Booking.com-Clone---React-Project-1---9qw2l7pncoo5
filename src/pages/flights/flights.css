@@ -114,5 +114,9 @@
     height: 30px;
     cursor: pointer;
     margin-top: 40px;
+    &:hover{
+      background-color: #73AFF0;
+      color: #FFFFFF;
+    }
 
 }

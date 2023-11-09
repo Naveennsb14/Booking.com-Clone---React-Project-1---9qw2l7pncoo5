@@ -104,12 +104,18 @@
 }
 
 .reserve{
+    cursor: pointer;
     margin-left: 16px;
     background-color: #0071C2;
+    border: 1px solid #0071C2;
     border: none;
     color: white;
     height: 24px;
     margin-bottom: 10px;
     width: 300px;
     align-self: center;
+    &:hover{
+        background-color: white;
+        color: #0071C2;
+    }
 }

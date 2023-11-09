@@ -1,30 +1,11 @@
 import { NavLink, useParams } from "react-router-dom";
 import "./hotelpage.css";
 import { CiLocationOn } from "react-icons/ci";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
 const Hotelpage = () => {
-  const photos = [
-    {
-      src: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/503999068.jpg?k=c8249b50c5bdd17f049b46d6577eae14a7bfa06c7ea39e9cbb20da5c95f4590d&o=&hp=1",
-    },
-    {
-      src: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/503999068.jpg?k=c8249b50c5bdd17f049b46d6577eae14a7bfa06c7ea39e9cbb20da5c95f4590d&o=&hp=1",
-    },
-    {
-      src: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/503999068.jpg?k=c8249b50c5bdd17f049b46d6577eae14a7bfa06c7ea39e9cbb20da5c95f4590d&o=&hp=1",
-    },
-    {
-      src: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/503999068.jpg?k=c8249b50c5bdd17f049b46d6577eae14a7bfa06c7ea39e9cbb20da5c95f4590d&o=&hp=1",
-    },
-    {
-      src: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/503999068.jpg?k=c8249b50c5bdd17f049b46d6577eae14a7bfa06c7ea39e9cbb20da5c95f4590d&o=&hp=1",
-    },
-    {
-      src: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/503999068.jpg?k=c8249b50c5bdd17f049b46d6577eae14a7bfa06c7ea39e9cbb20da5c95f4590d&o=&hp=1",
-    },
-  ];
+  const [singleHoteldata, setSingleHotelData] = useState([]);
 
   const { id } = useParams();
   console.log("id", id);
@@ -40,11 +21,22 @@ const Hotelpage = () => {
         `https://academics.newtonschool.co/api/v1/bookingportals/hotel/${id}`,
         config
       );
-      console.log("response", response);
+      console.log('rawdata',response);
+      console.log("singledata", response.data.data);
+      setSingleHotelData(response.data.data);
     } catch (error) {
       console.log("error", error);
     }
   };
+  const {
+    images,
+    amenities,
+    rating,
+    name,
+    rooms,
+  } = singleHoteldata;
+  console.log("images", images);
+  console.log('rooms', rooms);
 
   useEffect(() => {
     console.log("called useeffect");
@@ -59,23 +51,21 @@ const Hotelpage = () => {
           </NavLink>
         </div>
       </div>
-      <div className="hotelContainer">
+      <div className="hotelContainer" key={singleHoteldata._id}>
         <div className="hotelWrapper">
-          <h1 className="hotelTitle">Grand Hotel</h1>
+          <h1 className="hotelTitle">{name}</h1>
           <div className="hotelAddress">
             <CiLocationOn className="location-icon" />
-            <span className="address">Elton St 125 New York</span>
+            <span className="address">{singleHoteldata.location}</span>
           </div>
-          <span className="hotelDistance">
-            Excellent location - 500m from center
-          </span>
+          <span className="hotelDistance">{`Rating: ${rating}`}</span>
           <span className="hotelPriceHighlight">
-            Book a Stay over $114 at this property and get a free airport taxi
+            {`Amenities: ${amenities}`}
           </span>
           <div className="hotelImages">
-            {photos.map((photo) => (
+            {images?.map((images) => (
               <div className="hotelImgWrapper">
-                <img src={photo.src} alt="" className="hotelImg" />
+                <img src={images} alt="" className="hotelImg" />
               </div>
             ))}
           </div>
@@ -91,10 +81,10 @@ const Hotelpage = () => {
               adipisicing elit.
             </div>
             <div className="hotelDetailsPrice">
-              <h1 className="price-header">Perfect for 9-night stay!</h1>
+              <h1 className="price-header">Cancellation Policy</h1>
               <span className="location">
-                located in the real heart of krakow, this property has an
-                excellent location score of 9.8!
+                {`located in the ${singleHoteldata.location}, this property has an
+                excellent location score of ${rating}`}
               </span>
               <h2 className="price-details">
                 <b>$945</b>(9 nights)
