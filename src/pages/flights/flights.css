@@ -1,6 +1,21 @@
 .header-section {
   margin-bottom: 80px;
 }
+
+.headerSearch-flight {
+  width: 100%;
+  max-width: 1024px;
+  height: 30px;
+  background-color: white;
+  border: 3px solid #ffb700;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0px;
+  position: absolute;
+  top: 216px;
+  left: 160px;
+}
 .flight-container {
   display: flex;
   align-items: center;
@@ -14,21 +29,21 @@
   align-items: center;
   flex: 2;
   height: 200px;
-  border: 1px solid #EAEAEA;
+  border: 1px solid #eaeaea;
   border-radius: 8px;
 }
-.airways-detail{
-    display: flex;
-    flex-direction: column;
+.airways-detail {
+  display: flex;
+  flex-direction: column;
 }
 
-.air-logo{
-    font-size: 48px;
-    padding-left: 4px;
+.air-logo {
+  font-size: 48px;
+  padding-left: 4px;
 }
-.flight-name{
-    font-size: 10px;
-    padding: 4px;
+.flight-name {
+  font-size: 10px;
+  padding: 4px;
 }
 
 .timings {
@@ -36,14 +51,14 @@
   flex-direction: column;
   flex: 1;
 }
-.departure{
-    font-size: 16px;
-    font-weight: bold;
-    font-family: sans-serif;
+.departure {
+  font-size: 16px;
+  font-weight: bold;
+  font-family: sans-serif;
 }
 
-.departureDate{
-    font-size: 12px;
+.departureDate {
+  font-size: 12px;
 }
 
 .time-travel {
@@ -52,12 +67,12 @@
   flex: 1;
 }
 
-.totaltime{
-    font-size: 12px;
+.totaltime {
+  font-size: 12px;
 }
-.isdirect{
-    font-size: 10px;
-    margin-left: 4px;
+.isdirect {
+  font-size: 10px;
+  margin-left: 4px;
 }
 
 .arrival {
@@ -65,58 +80,57 @@
   flex-direction: column;
   flex: 1;
 }
-.arrival-time{
-    font-size: 16px;
-    font-weight: bold;
-    font-family: sans-serif;
+.arrival-time {
+  font-size: 16px;
+  font-weight: bold;
+  font-family: sans-serif;
 }
 
-.arrivalDate{
-    font-size: 12px;
+.arrivalDate {
+  font-size: 12px;
 }
 .price-section {
   flex: 1;
   display: flex;
   align-items: center;
   height: 200px;
-  border: 1px solid #EAEAEA;
+  border: 1px solid #eaeaea;
   flex-direction: column;
   border-radius: 8px;
 }
 
-.luggage-icon{
-    padding: 8px;
-    align-self:self-end
+.luggage-icon {
+  padding: 8px;
+  align-self: self-end;
 }
 
-.luggage-detail{
-    align-self: self-end;
-    padding: 4px;
-    font-size: 10px;
+.luggage-detail {
+  align-self: self-end;
+  padding: 4px;
+  font-size: 10px;
 }
 
-.price{
-    align-self: self-end;
-    font-weight: bold;
+.price {
+  align-self: self-end;
+  font-weight: bold;
 }
 
-.price-details{
-    font-weight: lighter;
-    align-self: self-end;
-    font-size: 8px;
+.price-details {
+  font-weight: lighter;
+  align-self: self-end;
+  font-size: 8px;
 }
 
-.see-flight{
-    border: 1px solid #73AFF0;
-    background-color: #FFFFFF;
-    color: #73AFF0;
-    width: 300px;
-    height: 30px;
-    cursor: pointer;
-    margin-top: 40px;
-    &:hover{
-      background-color: #73AFF0;
-      color: #FFFFFF;
-    }
-
+.see-flight {
+  border: 1px solid #73aff0;
+  background-color: #ffffff;
+  color: #73aff0;
+  width: 300px;
+  height: 30px;
+  cursor: pointer;
+  margin-top: 40px;
+  &:hover {
+    background-color: #73aff0;
+    color: #ffffff;
+  }
 }

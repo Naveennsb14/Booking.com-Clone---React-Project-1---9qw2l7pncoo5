@@ -1,0 +1,37 @@
+.modal-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color:#003B95;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    color: white;
+    font-weight: 100;
+    font-family: serif;
+  }
+  
+  /* Add additional styling for your modal content here */
+  
+  .confirmation-page {
+    display: block;
+    margin: 20px auto;
+  }
+  .payment-confirm{
+    margin-bottom: 50px;
+  }
+
+  .greeting{
+    margin-left: 100px;
+  }
+
+  .confirmation-page{
+    width: 100px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    border: none;
+    background-color: #1F7EE7;
+    color: white;
+  }
+  

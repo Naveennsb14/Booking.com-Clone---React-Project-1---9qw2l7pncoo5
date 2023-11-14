@@ -79,7 +79,10 @@ const Head = ({ type }) => {
             <span>Car-Rentals</span>
           </div>
         </div>
-        <div className="headerSearch">
+       
+        {type !== "list" && (
+          <div>
+          <div className="headerSearch">
           <div className="headerSearchItem">
             <LiaBedSolid className="headerIcon" />
             <input
@@ -185,8 +188,6 @@ const Head = ({ type }) => {
             </button>
           </div>
         </div>
-        {type !== "list" && (
-          <div>
             <h1 className="headerTitle">Howzat for a perfect stay</h1>
             <p className="headerDesc">Search hotels, homes and much more</p>
             <button className="headerBtn">Discover more</button>

@@ -1,4 +1,4 @@
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
 import "./hotelpage.css";
 import { CiLocationOn } from "react-icons/ci";
 import { useEffect, useState } from "react";
@@ -9,6 +9,10 @@ const Hotelpage = () => {
 
   const { id } = useParams();
   console.log("id", id);
+  const navigate=useNavigate()
+  const handelcheckout=()=>{
+    navigate('/payment-page')
+  }
 
   const getHotelData = async () => {
     const config = {
@@ -21,22 +25,17 @@ const Hotelpage = () => {
         `https://academics.newtonschool.co/api/v1/bookingportals/hotel/${id}`,
         config
       );
-      console.log('rawdata',response);
+      console.log("rawdata", response);
       console.log("singledata", response.data.data);
       setSingleHotelData(response.data.data);
     } catch (error) {
       console.log("error", error);
     }
   };
-  const {
-    images,
-    amenities,
-    rating,
-    name,
-    rooms,
-  } = singleHoteldata;
+  const { images, amenities, rating, name, rooms } = singleHoteldata;
   console.log("images", images);
-  console.log('rooms', rooms);
+  console.log("room0", rooms);
+  // console.log('length', rooms.length);
 
   useEffect(() => {
     console.log("called useeffect");
@@ -78,18 +77,26 @@ const Hotelpage = () => {
               laudantium dolore consectetur, veniam maiores sapiente quibusdam
               aut magnam, architecto nostrum accusamus explicabo. Libero
               deleniti atque aperiam? Lorem ipsum dolor sit amet consectetur
-              adipisicing elit.
+              adipisicing elit. Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Architecto odio alias magni, et pariatur laborum
+              hic voluptatibus officiis animi possimus repudiandae officia,
+              soluta quis neque minima? Ab ipsam fuga quisquam! Cum reiciendis
+              eos quaerat facilis ullam voluptatibus? Ullam fugiat accusantium
+              incidunt possimus ab ratione, necessitatibus perferendis impedit
+              repellendus autem quae?
             </div>
             <div className="hotelDetailsPrice">
-              <h1 className="price-header">Cancellation Policy</h1>
+              <h1 className="price-header">24 hr's Cancellation Policy</h1>
               <span className="location">
                 {`located in the ${singleHoteldata.location}, this property has an
                 excellent location score of ${rating}`}
               </span>
               <h2 className="price-details">
-                <b>$945</b>(9 nights)
+                {
+                  rooms &&   <b>{`₹ ${rooms[0].costPerNight} (Per night) `}</b> 
+                }
               </h2>
-              <button className="reserve">Reserve</button>
+              <button className="reserve" onClick={handelcheckout}>Reserve</button>
             </div>
           </div>
         </div>

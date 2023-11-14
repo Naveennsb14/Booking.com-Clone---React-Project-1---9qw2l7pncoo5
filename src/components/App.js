@@ -8,6 +8,7 @@ import { createContext, useState } from "react";
 import Flights from "../pages/flights/Flights";
 import Hotelpage from "../pages/hotelpage/Hotelpage";
 import { Authprovider } from "../pages/provider/Authprovider";
+import Payment from "../pages/paymentpage/Payment";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/flights" element={<Flights />} />
           <Route path="/signin" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/payment-page" element={<Payment/>}/>
         </Routes>
       </BrowserRouter>
     </Authprovider>
