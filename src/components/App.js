@@ -9,6 +9,7 @@ import Flights from "../pages/flights/Flights";
 import Hotelpage from "../pages/hotelpage/Hotelpage";
 import { Authprovider } from "../pages/provider/Authprovider";
 import Payment from "../pages/paymentpage/Payment";
+import Flightmodal from "./flightmodal/Flightmodal";
 
 function App() {
   return (
@@ -19,9 +20,10 @@ function App() {
           <Route path="/hotels" element={<Hotel />} />
           <Route path="/hotels/:id" element={<Hotelpage />} />
           <Route path="/flights" element={<Flights />} />
+          <Route path="/flights/:flightid" element={<Flightmodal/>}/>
           <Route path="/signin" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/payment-page" element={<Payment/>}/>
+          <Route path="/payment-page" element={<Payment />} />
         </Routes>
       </BrowserRouter>
     </Authprovider>
