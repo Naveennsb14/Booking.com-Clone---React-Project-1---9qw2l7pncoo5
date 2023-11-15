@@ -2,12 +2,17 @@ import "./flightmodal.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const Flightmodal = ({ closeflightModal }) => {
+  const navigate= useNavigate()
   const { flightid } = useParams();
   console.log("flightid", flightid);
   const [singleflightdetails, setSingleFlightDetails] = useState([]);
+  const handelCheckout=()=>{
+    navigate('/payment-page')
+
+  }
 
   const getSingleFlight = async () => {
     const config = {
@@ -65,7 +70,7 @@ const Flightmodal = ({ closeflightModal }) => {
       </div>
       <div className="ticketprice">
         <h1 className="total-price">{`INR ${ticketPrice}.00 /-`}</h1>
-        <button className="select-btn">Select</button>
+        <button className="select-btn" onClick={handelCheckout}>Select</button>
       </div>
     </div>,
     document.querySelector("#flightmodal-root")
