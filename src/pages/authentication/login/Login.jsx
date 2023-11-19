@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import "./login.css";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useAuth } from "../../provider/Authprovider";
 
@@ -10,6 +10,7 @@ const Login = () => {
 
   const navigate = useNavigate();
   const { setIsLoggedin } = useAuth();
+  const {state}=useLocation()
 
   const loginUser = async (user) => {
     const config = {
@@ -29,8 +30,13 @@ const Login = () => {
         sessionStorage.setItem("userToken", token);
         sessionStorage.setItem("userName", JSON.stringify(res.data.data.name));
         setIsLoggedin(true);
+        if(state){
+          navigate(state.prevPath);
+        }else{
+          navigate('/')
+        }
 
-        navigate("/");
+        
       }
     } catch (error) {
       console.log("error", error);

@@ -10,6 +10,7 @@ import Hotelpage from "../pages/hotelpage/Hotelpage";
 import { Authprovider } from "../pages/provider/Authprovider";
 import Payment from "../pages/paymentpage/Payment";
 import Flightmodal from "./flightmodal/Flightmodal";
+import { Authnavigator } from "../navigator/Authnavigator";
 
 function App() {
   return (
@@ -18,9 +19,23 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/hotels" element={<Hotel />} />
-          <Route path="/hotels/:id" element={<Hotelpage />} />
+          <Route
+            path="/hotels/:id"
+            element={
+              <Authnavigator>
+                <Hotelpage />
+              </Authnavigator>
+            }
+          />
           <Route path="/flights" element={<Flights />} />
-          <Route path="/flights/:flightid" element={<Flightmodal/>}/>
+          <Route
+            path="/flights/:flightid"
+            element={
+              <Authnavigator>
+                <Flightmodal />
+              </Authnavigator>
+            }
+          />
           <Route path="/signin" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/payment-page" element={<Payment />} />

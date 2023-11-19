@@ -2,7 +2,7 @@ import "./flightmodal.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
-import { useNavigate, useParams } from "react-router-dom";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
 
 const Flightmodal = ({ closeflightModal }) => {
   const navigate= useNavigate()
@@ -49,6 +49,13 @@ const Flightmodal = ({ closeflightModal }) => {
   } = singleflightdetails;
   return ReactDOM.createPortal(
     <div className="singleflight-container" key={_id}>
+     <div className="booking">
+        <div className="booking-container">
+          <NavLink to="/" className="logo">
+            <h2>Booking.com</h2>
+          </NavLink>
+        </div>
+      </div>
       <h3 className="flight-header">{`Your Flight to ${destination}`}</h3>
       <span className="direct">{`Direct - ${duration} : 00 min`}</span>
       <div className="flightdetails-container">
