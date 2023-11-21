@@ -33,6 +33,7 @@ const Flights = () => {
     navigate(`/flights/${path}`)
 
   };
+
   const getFlightData = async () => {
     const config = {
       headers: {
@@ -93,7 +94,7 @@ const Flights = () => {
           />
         </div>
         <div className="headerSearchItem">
-          <button className="searchBtn">Search</button>
+          <button className="searchBtn" >Search</button>
         </div>
       </div>
       {flightdetails?.map((flightdetails) => (
