@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 const Payment = () => {
   const [showModal, setShowModal] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [nameinput, setnameInput] = useState();
   const navigate = useNavigate();
 
   const openModal = () => {
@@ -18,6 +19,11 @@ const Payment = () => {
   const closeModal = () => {
     setShowModal(false);
   };
+  const handelonChange =(e)=>{
+    const {value}=e.target;
+    setnameInput(value);
+
+  }
 
   const handelFormSubmit = (e) => {
     e.preventDefault();
@@ -33,12 +39,14 @@ const Payment = () => {
         <form onSubmit={handelFormSubmit}>
           <div class="form-row">
             <div class="form-group col-md-6">
-              <label for="cardName" >Card Holder Name</label>
+              <label for="cardName" >User Full Name : </label>
               <input
                 type="text"
                 class="form-control"
                 id="cardName"
                 placeholder="John Doe"
+                onChange={handelonChange}
+                value={nameinput}
                 required
               />
             </div>
@@ -97,7 +105,7 @@ const Payment = () => {
           <button class="btn btn-primary" >submit</button>
         </form>
       </div>
-      {showModal && <Paymentmodal closeModal={closeModal}/>}
+      {showModal && <Paymentmodal inputname={nameinput} closeModal={closeModal}/>}
     </div>
   );
 };

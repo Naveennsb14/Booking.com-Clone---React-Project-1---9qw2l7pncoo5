@@ -2,7 +2,8 @@ import ReactDOM from "react-dom";
 import "./paymentmodal.css";
 import { useNavigate } from "react-router-dom";
 
-const Paymentmodal = ({ closeModal }) => {
+const Paymentmodal = ({ closeModal, inputname }) => {
+  console.log("input", inputname);
   const navigate=useNavigate()
   const handelnavigate = () => {};
   const handleclose=()=>{
@@ -14,7 +15,7 @@ const Paymentmodal = ({ closeModal }) => {
     <div className="modal-container">
       <div className="feedback-container">
         <h2 className="payment-confirm">
-          Congratulations! Your Payment is Succesfull
+          Congratulations! {inputname} Your Payment is Succesfull
         </h2>
         <h3 className="greeting"> Thanks, for using our application!</h3>
 
