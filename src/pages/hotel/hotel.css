@@ -86,5 +86,12 @@ flex-direction: column;
    background-color: #003B95;
 }
 
+@media screen and (max-width: 768px) {
+    .listSearch{
+        display: none;
+    }
+    
+}
+
 
 

@@ -174,3 +174,51 @@ button.headerBtn {
 .optionCounterButton:disabled {
   cursor: not-allowed;
 }
+ 
+@media screen and (max-width: 768px) {
+  .headerList {
+    gap: 10px;
+  }
+
+  .headerListItem {
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .headerTitle {
+    font-size: 24px;
+  }
+
+  .headerDesc {
+    font-size: 14px;
+  }
+
+  button.headerBtn {
+    padding: 8px 12px;
+    font-size: small;
+  }
+
+  .headerSearch {
+    height: 80px;
+    bottom: -65px;
+  }
+
+  .searchBtn {
+    height: 30px;
+    font-size: small;
+    padding: 6px 12px;
+  }
+
+  .headerIcon {
+    font-size: medium;
+  }
+
+  .headerSearchInput {
+    font-size: small;
+    width: 70%;
+  }
+
+  .optionItem {
+    font-size: 10px;
+  }
+}
