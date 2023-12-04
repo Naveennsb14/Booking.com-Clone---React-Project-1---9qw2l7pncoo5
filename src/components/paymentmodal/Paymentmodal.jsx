@@ -15,7 +15,7 @@ const Paymentmodal = ({ closeModal, inputname }) => {
     <div className="modal-container">
       <div className="feedback-container">
         <h2 className="payment-confirm">
-          Congratulations! {inputname} Your Payment is Succesfull
+          Congratulations! {inputname} Your Booking is Succesfull
         </h2>
         <h3 className="greeting"> Thanks, for using our application!</h3>
 
