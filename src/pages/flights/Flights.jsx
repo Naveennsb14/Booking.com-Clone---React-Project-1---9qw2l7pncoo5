@@ -52,10 +52,17 @@ const Flights = () => {
       console.log("error", error);
     }
   };
-  useEffect(() => {
-    console.log("useEffect Called");
+ useEffect(()=>{
+  getFlightData();
+
+ },[])
+
+  const handelSubmit = (e)=>{
+    e.preventDefault();
+    console.log(source);
     getFlightData();
-  }, []);
+
+  }
 
   return (
    <div className="main-container">
@@ -65,6 +72,7 @@ const Flights = () => {
         <Nav />
         <Head type="list" />
       </div>
+      <form onSubmit={handelSubmit}>
       <div className="headerSearch-flight">
         <div className="headerSearchItem">
           <RiFlightTakeoffFill className="headerIcon" />
@@ -73,6 +81,7 @@ const Flights = () => {
             placeholder="Where from?"
             className="headerSearchInput"
             onChange={(e) => setSource(e.target.value)}
+            value={source}
           />
         </div>
         <div className="headerSearchItem">
@@ -82,6 +91,7 @@ const Flights = () => {
             placeholder="Where to?"
             className="headerSearchInput"
             onChange={(e) => setArrival(e.target.value)}
+            value={arrival}
           />
         </div>
         <div className="headerSearchItem">
@@ -91,12 +101,14 @@ const Flights = () => {
             placeholder="Day of journey?"
             className="headerSearchInput"
             onChange={(e) => setDay(e.target.value)}
+            value={day}
           />
         </div>
         <div className="headerSearchItem">
-          <button className="searchBtn" >Search</button>
+          <button className="searchBtn" type="submit">Search</button>
         </div>
       </div>
+      </form>
       {flightdetails?.map((flightdetails) => (
         <div className="flight-container" key={flightdetails._id}>
           <div className="flight-details">
