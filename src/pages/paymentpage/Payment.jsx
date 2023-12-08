@@ -10,6 +10,9 @@ const Payment = () => {
   const [showModal, setShowModal] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [nameinput, setnameInput] = useState();
+  const [emailinput, setemailInput]= useState();
+  const [creditcardNumber, setCreditCardNumber] = useState();
+  const [isValid, setIsValid]= useState(false);
   const navigate = useNavigate();
 
   const openModal = () => {
@@ -25,11 +28,36 @@ const Payment = () => {
 
   }
 
+  const handelemailChange = (e)=>{
+    const {value}=e.target;
+    setemailInput(value);
+  }
+
   const handelFormSubmit = (e) => {
     e.preventDefault();
     setFormSubmitted(true)
     openModal();
   };
+  const formatCreditCardNumber = (input) => {
+    // Remove non-digit characters
+    const digitsOnly = input.replace(/[^\d]/g, '');
+
+    // Insert hyphens after every 4 digits
+    const formattedNumber = (digitsOnly.match(/.{1,4}/g) || [])
+        .join('-')
+        .substr(0, 19);
+
+    return formattedNumber;
+};
+
+const handleCardNumberChange = (e) => {
+    const input = e.target.value;
+    const formattedNumber = formatCreditCardNumber(input);
+    setCreditCardNumber(formattedNumber);
+
+    const pattern = /\b\d{4}[-,]\d{4}[-,]\d{4}[-,]\d{4}\b/;
+    setIsValid(pattern.test(formattedNumber));
+};
   return (
     <div className={`payment-container ${formSubmitted ? 'invisible': " "}`}>
       <Nav />
@@ -51,19 +79,33 @@ const Payment = () => {
               />
             </div>
             <div class="form-group col-md-6">
-              <label for="cardNum">Card Number</label>
+              <label for="cardNum">Email Address</label>
               <input
-                type="password"
+                type="email"
                 class="form-control"
                 id="cardNum"
-                placeholder="0000-0000-0000"
+                placeholder="johndoe@gmail.com"
+                value={emailinput}
+                onChange={handelemailChange}
                 required
               />
             </div>
           </div>
           <div class="form-row">
+          <div class="form-group col-md-6">
+              <label for="cardNum">Card Number</label>
+              <input
+                type="text"
+                class="form-control"
+                id="cardNum"
+                placeholder="0000-0000-0000"
+                onChange={handleCardNumberChange}
+                value={creditcardNumber}
+                required
+              />
+            </div>
             <div class="form-group col-md-4">
-              <label for="endDate">Expiration Date: Month</label>
+              <label for="endDate">Exp: Month</label>
               <select id="endDate" class="form-control" required>
                 <option selected>01</option>
                 <option>2</option>
@@ -105,7 +147,7 @@ const Payment = () => {
           <button class="btn btn-primary" >submit</button>
         </form>
       </div>
-      {showModal && <Paymentmodal inputname={nameinput} closeModal={closeModal}/>}
+      {showModal && <Paymentmodal inputemail={emailinput} inputname={nameinput} closeModal={closeModal}/>}
     </div>
   );
 };

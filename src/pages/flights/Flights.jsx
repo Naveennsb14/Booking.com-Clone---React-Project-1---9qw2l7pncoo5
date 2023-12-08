@@ -12,8 +12,8 @@ import Flightmodal from "../../components/flightmodal/Flightmodal";
 import { useNavigate } from "react-router-dom";
 
 const Flights = () => {
-  const [source, setSource] = useState("BOM");
-  const [arrival, setArrival] = useState("HYD");
+  const [source, setSource] = useState("");
+  const [arrival, setArrival] = useState("");
   const [day, setDay] = useState("Sun");
   const [flightdetails, setFlightDetails] = useState([]);
   const [showflightModal, setShowFlightModal] = useState(false);

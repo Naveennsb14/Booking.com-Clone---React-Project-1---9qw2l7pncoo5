@@ -18,11 +18,20 @@
     margin: 20px auto;
   }
   .payment-confirm{
-    margin-bottom: 50px;
+    margin-bottom: 20px;
+  }
+
+  .payment-confirm > span{
+    color: #1D8248;
+  }
+
+  .email > span {
+    color: #003B95;
   }
 
   .greeting{
-    margin-left: 100px;
+    margin-left: 140px;
+    margin-top: 20px;
   }
 
   .confirmation-page{

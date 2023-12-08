@@ -35,7 +35,9 @@ h4.payment-para {
   height: 28px;
 }
 #endDate {
+  width: 50px;
   margin-top: 6px;
+  margin-left: 4px;
   height: 36px;
 }
 
@@ -68,6 +70,9 @@ form {
 
 .invisible{
     visibility: hidden;
+}
+.exp-date{
+  width: 20px;
 }
 
 @media screen and (min-width: 768px) {

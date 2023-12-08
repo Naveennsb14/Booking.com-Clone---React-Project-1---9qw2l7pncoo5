@@ -37,12 +37,15 @@
     cursor: pointer;
 }
 
-@media screen and (max-width: 768px) {
-    .fpImg{
-        width: 100%;
-        height: 120px;
-        
-
+@media screen and (max-width: 600px) {
+    .fp {
+        width: 80%;
+        max-width: 1024px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
     }
     
 }

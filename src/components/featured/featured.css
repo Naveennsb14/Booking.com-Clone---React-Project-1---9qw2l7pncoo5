@@ -27,3 +27,20 @@
     left: 20px;
     color: #FFFFFF;
 }
+
+@media screen and (max-width: 600px) {
+    .featured {
+        flex-direction: column;
+    }
+    .pList {
+        width: 100%;
+        max-width: 1024px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    
+}
