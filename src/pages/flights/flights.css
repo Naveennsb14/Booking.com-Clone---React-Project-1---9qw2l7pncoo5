@@ -149,7 +149,7 @@
   }
 }
 
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 600px) {
   .flight-section{
     flex-direction: column;
     gap: 4px;

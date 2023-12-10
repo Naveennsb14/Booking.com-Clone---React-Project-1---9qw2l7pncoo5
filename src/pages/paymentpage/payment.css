@@ -75,7 +75,7 @@ form {
   width: 20px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 600px) {
   #checkOut {
     margin: 3% 15%;
   }

@@ -48,6 +48,13 @@ const Hotel = () => {
   };
   console.log(destination);
 
+  // const handelhigh = ()=>{
+
+  // }
+  // const handellow = ()=>{
+
+  // }
+
   return (
     <div>
       <Nav />
