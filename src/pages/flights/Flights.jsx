@@ -63,6 +63,20 @@ const Flights = () => {
     getFlightData();
 
   }
+  function HandleSortByHighest() {
+    const sortedFlights = [...flightdetails];
+    sortedFlights.sort((a, b) => {
+        return b.ticketPrice - a.ticketPrice;
+    })
+    setFlightDetails(sortedFlights)
+}
+function HandleSortByCheapest() {
+  const sortedFlights = [...flightdetails];
+  sortedFlights.sort((a, b) => {
+      return a.ticketPrice - b.ticketPrice;
+  })
+  setFlightDetails(sortedFlights)
+}
 
   return (
    <div className="main-container">
@@ -109,6 +123,10 @@ const Flights = () => {
         </div>
       </div>
       </form>
+      <div className="sorting-flight">
+        <button onClick={HandleSortByHighest}>Sort by highest</button>
+        <button onClick={HandleSortByCheapest}>Sort by lowest</button>
+      </div>
       {flightdetails?.map((flightdetails) => (
         <div className="flight-container" key={flightdetails._id}>
           <div className="flight-details">

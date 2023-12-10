@@ -148,6 +148,13 @@
     justify-content: flex-start;
   }
 }
+.sorting-flight {
+  position: absolute;
+  top: 156px;
+  left: 168px;
+  display: flex;
+  gap: 10px;
+}
 
 @media screen and (max-width: 600px) {
   .flight-section{
