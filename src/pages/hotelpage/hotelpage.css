@@ -119,3 +119,18 @@
         color: #0071C2;
     }
 }
+@media screen and (max-width:600px) {
+    .hotelDetailTexts {
+        flex: 2 1;
+        font-size: 14px;
+        font-family: sans-serif;
+        display: none;
+    }
+    .hotelImages {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+    
+}
