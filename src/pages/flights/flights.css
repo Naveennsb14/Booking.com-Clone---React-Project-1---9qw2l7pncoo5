@@ -137,7 +137,7 @@
 }
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 600px) {
   .headerSearch-flight{
     width: 70%;
     left: 60px;
@@ -147,6 +147,11 @@
     display: flex;
     justify-content: flex-start;
   }
+  .flight-container {
+    align-items: start;
+    margin: 40px;
+    width: 80%;
+}
 }
 .sorting-flight {
   position: absolute;

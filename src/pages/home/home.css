@@ -10,6 +10,13 @@
     width: 1024px;
     font-size: 24px;
 }
+@media screen and (max-width:600px) {
+    .homeTitle {
+        font-size: 24px;
+        width: 1024px;
+        display: none;
+    }
+}
 
 /* .featuredTitle{
     width: 1024px;
