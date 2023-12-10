@@ -64,7 +64,7 @@ const handleCardNumberChange = (e) => {
       <div id="checkOut">
         <h1 className="checkout-para">Checkout</h1>
         <h4 className="payment-para">Payment Details</h4>
-        <form onSubmit={handelFormSubmit}>
+        <form className="form" onSubmit={handelFormSubmit}>
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="cardName" >User Full Name : </label>
