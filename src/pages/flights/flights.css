@@ -136,6 +136,19 @@
   }
 }
 
+.highest-price{
+  padding: 4px 8px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+}
+.lowest-price{
+  padding: 4px 8px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+}
+
 
 @media screen and (max-width: 600px) {
   .headerSearch-flight{

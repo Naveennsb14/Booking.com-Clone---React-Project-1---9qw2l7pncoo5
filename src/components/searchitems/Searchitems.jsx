@@ -52,8 +52,8 @@ const Searchitems = () => {
   return (
     <>
       <div className="sorting">
-        <button onClick={sortHighestA}>Sort by highest</button>
-        <button onClick={sortLowestB}>Sort by lowest</button>
+        <button className="highest-price" onClick={sortHighestA}>Highest Price</button>
+        <button className="lowest-price" onClick={sortLowestB}>Lowest Price</button>
       </div>
       {hotelData.length > 0 &&
         hotelData.map((hotel) => {

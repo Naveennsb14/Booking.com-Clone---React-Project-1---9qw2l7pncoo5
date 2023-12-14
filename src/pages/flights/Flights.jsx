@@ -124,8 +124,8 @@ function HandleSortByCheapest() {
       </div>
       </form>
       <div className="sorting-flight">
-        <button onClick={HandleSortByHighest}>Sort by highest</button>
-        <button onClick={HandleSortByCheapest}>Sort by lowest</button>
+        <button className="highest-price" onClick={HandleSortByHighest}>Highest Price</button>
+        <button className="lowest-price" onClick={HandleSortByCheapest}>Lowest Price</button>
       </div>
       {flightdetails?.map((flightdetails) => (
         <div className="flight-container" key={flightdetails._id}>

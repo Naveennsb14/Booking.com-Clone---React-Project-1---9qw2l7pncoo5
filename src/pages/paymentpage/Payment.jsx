@@ -24,7 +24,10 @@ const Payment = () => {
   };
   const handelonChange =(e)=>{
     const {value}=e.target;
-    setnameInput(value);
+    if (/^[A-Za-z\s]+$/.test(value) || value === '') {
+      setnameInput(value);
+    }
+    
 
   }
 
@@ -72,6 +75,7 @@ const handleCardNumberChange = (e) => {
                 type="text"
                 class="form-control"
                 id="cardName"
+                pattern="^[A-Za-z\s]*$"
                 placeholder="John Doe"
                 onChange={handelonChange}
                 value={nameinput}
@@ -98,8 +102,10 @@ const handleCardNumberChange = (e) => {
                 type="text"
                 class="form-control"
                 id="cardNum"
-                placeholder="0000-0000-0000"
+                placeholder="0000-0000-0000-0000"
                 onChange={handleCardNumberChange}
+                maxLength="19"
+                minLength="19"
                 value={creditcardNumber}
                 required
               />
@@ -139,6 +145,8 @@ const handleCardNumberChange = (e) => {
                 class="form-control"
                 id="cVV"
                 placeholder="123"
+                maxLength="3"
+                minLength="3"
                 required
               />
             </div>

@@ -129,5 +129,19 @@
         top: 200px;
         display: flex;
         gap: 10px;
+
     
 }
+.highest-price{
+    padding: 4px 8px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+}
+.lowest-price{
+    padding: 4px 8px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+}
+
