@@ -40,9 +40,9 @@ function App() {
           <Route path="/signin" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/payment-page" element={<Payment />} />
-          <Route path="/underconstruction" element={<Underconstruction/>}/>
-          <Route path="/underconstruction2" element={<Underconstruction/>}/>
-          <Route path="/underconstruction3" element={<Underconstruction/>}/>
+          <Route path="/attractions" element={<Underconstruction/>}/>
+          <Route path="/airporttaxies" element={<Underconstruction/>}/>
+          <Route path="/carrentals" element={<Underconstruction/>}/>
         </Routes>
       </BrowserRouter>
     </Authprovider>
