@@ -67,16 +67,22 @@ const Head = ({ type }) => {
           </div>
 
           <div className="headerListItem">
+            <NavLink className="span" to="/underconstruction">
             <MdAttractions className="headerListIcon" />
             <span>Attractions</span>
+            </NavLink>
           </div>
           <div className="headerListItem">
+            <NavLink className="span" to="/underconstruction2">
             <MdLocalTaxi className="headerListIcon" />
             <span>Airport taxies</span>
+            </NavLink>
           </div>
           <div className="headerListItem">
+            <NavLink className="span" to="/underconstruction3">
             <BsFillCarFrontFill className="headerListIcon" />
             <span>Car-Rentals</span>
+            </NavLink>
           </div>
         </div>
        

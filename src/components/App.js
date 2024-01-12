@@ -11,6 +11,7 @@ import { Authprovider } from "../pages/provider/Authprovider";
 import Payment from "../pages/paymentpage/Payment";
 import Flightmodal from "./flightmodal/Flightmodal";
 import { Authnavigator } from "../navigator/Authnavigator";
+import Underconstruction from "../pages/underconstruction/Underconstruction";
 
 function App() {
   return (
@@ -39,6 +40,9 @@ function App() {
           <Route path="/signin" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/payment-page" element={<Payment />} />
+          <Route path="/underconstruction" element={<Underconstruction/>}/>
+          <Route path="/underconstruction2" element={<Underconstruction/>}/>
+          <Route path="/underconstruction3" element={<Underconstruction/>}/>
         </Routes>
       </BrowserRouter>
     </Authprovider>
