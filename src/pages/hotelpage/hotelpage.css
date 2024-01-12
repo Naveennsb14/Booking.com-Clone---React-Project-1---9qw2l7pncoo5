@@ -134,3 +134,20 @@
     }
     
 }
+
+@media screen and (max-width:768px) {
+    .listSearch {
+        flex: 1 1;
+        background-color: #FEBB02;
+        padding: 10px;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 80px;
+        margin-top: 40px;
+        margin-left: 110px;
+        font-family: sans-serif;
+        height: -webkit-max-content;
+        height: max-content;
+        display: none;
+    }
+}

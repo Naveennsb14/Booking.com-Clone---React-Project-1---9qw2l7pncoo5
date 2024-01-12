@@ -189,7 +189,7 @@ button.headerBtn {
     display: none;
   }
   .headerSearch {
-    width: 100%;
+    width: 96%;
     max-width: 360px;
     height: 30px;
     background-color: white;
@@ -243,6 +243,12 @@ button.headerBtn {
   cursor: pointer;
   color: #003B95;
   margin-right: 4px;
+}
+.date {
+  position: absolute;
+  top: 54px;
+  z-index: 2;
+  left: 4px;
 }
 }
 

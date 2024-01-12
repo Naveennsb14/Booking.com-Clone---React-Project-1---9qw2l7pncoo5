@@ -119,7 +119,7 @@ function HandleSortByCheapest() {
           />
         </div>
         <div className="headerSearchItem">
-          <button className="searchBtn" type="submit">Search</button>
+          <button className="searchBtnFlight" type="submit">Search</button>
         </div>
       </div>
       </form>
