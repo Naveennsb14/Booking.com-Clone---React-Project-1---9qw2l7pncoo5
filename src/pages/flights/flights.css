@@ -14,7 +14,7 @@
   padding: 10px 0px;
   position: absolute;
   top: 216px;
-  left: 168px;
+  left: 160px;
 }
 
 .searchBtnFlight {
@@ -164,43 +164,7 @@
 }
 
 
-@media screen and (max-width: 600px) {
-  .headerSearch-flight{
-    width: 70%;
-    left: 60px;
-  }
-  .flight-container{
-    width: 560px;
-    display: flex;
-    justify-content: flex-start;
-  }
-  .flight-container {
-    align-items: start;
-    margin: 40px;
-    width: 80%;
-}
-}
-.sorting-flight {
-  position: absolute;
-  top: 156px;
-  left: 168px;
-  display: flex;
-  gap: 10px;
-}
 
-@media screen and (max-width: 600px) {
-  .flight-section{
-    flex-direction: column;
-    gap: 4px;
-
-  }
-  .flight-container{
-    flex-direction: column;
-    align-items: start;
-    margin: 40px;
-    gap: 4px;
-  }
-}
 
 @media screen and (max-width:768px) {
   .headerSearch-flight {
@@ -215,7 +179,7 @@
     padding: 10px 0px;
     position: absolute;
     top: 216px;
-    left: 20px;
+    left: 8px;
 }
 .searchBtnFlight {
   height: 50px;
@@ -248,3 +212,47 @@
   margin-bottom: 20px;
 }
 }
+
+@media screen and (max-width: 600px) {
+  .headerSearch-flight{
+    width: 70%;
+    left: 60px;
+  }
+  .flight-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin: auto;
+    width: 752px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+.flight-details {
+  display: flex;
+  align-items: center;
+  flex: 2 1;
+  height: 200px;
+  width: 368px;
+  /* margin: auto; */
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+}
+.price-section {
+  display: flex;
+  align-items: center;
+  height: 200px;
+  border: 1px solid #eaeaea;
+  flex-direction: column;
+  /* margin: auto; */
+  border-radius: 8px;
+}
+
+}
+.sorting-flight {
+  position: absolute;
+  top: 156px;
+  left: 168px;
+  display: flex;
+  gap: 10px;
+}
+
