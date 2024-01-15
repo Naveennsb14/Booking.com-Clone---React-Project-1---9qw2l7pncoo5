@@ -215,15 +215,13 @@
 
 @media screen and (max-width: 600px) {
   .headerSearch-flight{
-    width: 70%;
-    left: 60px;
+    width: 95%;
   }
   .flight-container {
     display: flex;
     flex-direction: column;
     align-items: start;
-    margin: auto;
-    width: 752px;
+    width: 324px;
     border-radius: 8px;
     margin-bottom: 20px;
 }
@@ -232,7 +230,7 @@
   align-items: center;
   flex: 2 1;
   height: 200px;
-  width: 368px;
+  width: 320px;
   /* margin: auto; */
   border: 1px solid #eaeaea;
   border-radius: 8px;
@@ -245,6 +243,19 @@
   flex-direction: column;
   /* margin: auto; */
   border-radius: 8px;
+}
+.searchBtnFlight {
+  height: 50px;
+  background-color: #006ce4;
+  color: white;
+  font-weight: 500;
+  font-size: large;
+  padding: 10px 24px;
+  /* left: 586px; */
+  border: none;
+  cursor: pointer;
+  position: relative;
+  left: 0px;
 }
 
 }
