@@ -92,7 +92,7 @@ function HandleSortByCheapest() {
           <RiFlightTakeoffFill className="headerIcon" />
           <input
             type="text"
-            placeholder="Where from?"
+            placeholder="Where from? "
             className="headerSearchInput"
             onChange={(e) => setSource(e.target.value)}
             value={source}

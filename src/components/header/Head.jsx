@@ -106,7 +106,7 @@ const Head = ({ type }) => {
                 <span className="headerSearchText">{`${format(
                   date[0].startDate,
                   "dd/MM/yyyy"
-                )} to ${format(date[0].startDate, "dd/MM/yyyy")}`}</span>
+                )} to ${format(date[0].endDate, "dd/MM/yyyy")}`}</span>
                 {openDate && (
                   <DateRange
                     editableDateInputs={true}
