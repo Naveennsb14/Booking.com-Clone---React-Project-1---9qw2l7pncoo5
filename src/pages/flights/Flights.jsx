@@ -92,7 +92,7 @@ function HandleSortByCheapest() {
           <RiFlightTakeoffFill className="headerIcon" />
           <input
             type="text"
-            placeholder="Where from? "
+            placeholder="Where from? (e.g., DEL)"
             className="headerSearchInput"
             onChange={(e) => setSource(e.target.value)}
             value={source}
@@ -102,7 +102,7 @@ function HandleSortByCheapest() {
           <MdFlightLand className="headerIcon" />
           <input
             type="text"
-            placeholder="Where to?"
+            placeholder="Where to? (e.g., BOM)"
             className="headerSearchInput"
             onChange={(e) => setArrival(e.target.value)}
             value={arrival}
