@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import "./login.css";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -11,6 +11,7 @@ const Login = () => {
   const navigate = useNavigate();
   const { setIsLoggedin } = useAuth();
   const {state}=useLocation()
+  const [handelerror, setHandelError]=useState();
 
   const loginUser = async (user) => {
     const config = {
@@ -39,7 +40,8 @@ const Login = () => {
         
       }
     } catch (error) {
-      console.log("error", error);
+      console.log("error", error.response.data.message);
+      setHandelError(error.response.data.message)
     }
   };
 
@@ -101,6 +103,7 @@ const Login = () => {
           </div>
         </form>
       </div>
+      {handelerror && <div className="booking__signinErrorcontainer"><span className="booking_signinerror">{handelerror}</span></div>}
     </>
   );
 };

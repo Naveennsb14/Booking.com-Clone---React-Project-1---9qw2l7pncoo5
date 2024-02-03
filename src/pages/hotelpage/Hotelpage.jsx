@@ -33,6 +33,7 @@ const Hotelpage = () => {
     }
   };
   const { images, amenities, rating, name, rooms } = singleHoteldata;
+  localStorage.setItem('name', name)
   console.log("images", images);
   console.log("room0", rooms);
   // console.log('length', rooms.length);

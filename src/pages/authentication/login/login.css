@@ -86,3 +86,14 @@ input {
   .signup-btn:hover{
     background-color: #003b95;
   }
+
+  .booking__signinErrorcontainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .booking_signinerror{
+    color: #DF3F18;
+    font-size: 14px;
+    /* font-weight: bold; */
+  }

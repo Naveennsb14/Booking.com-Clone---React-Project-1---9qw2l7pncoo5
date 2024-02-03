@@ -12,6 +12,7 @@ import Payment from "../pages/paymentpage/Payment";
 import Flightmodal from "./flightmodal/Flightmodal";
 import { Authnavigator } from "../navigator/Authnavigator";
 import Underconstruction from "../pages/underconstruction/Underconstruction";
+import Orderdetails from "../orderdetails/Orderdetails";
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
           <Route path="/attractions" element={<Underconstruction/>}/>
           <Route path="/airporttaxies" element={<Underconstruction/>}/>
           <Route path="/carrentals" element={<Underconstruction/>}/>
+          <Route path="/orderdetails" element={<Orderdetails/>}/>
         </Routes>
       </BrowserRouter>
     </Authprovider>
